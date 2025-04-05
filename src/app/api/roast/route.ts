@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { OpenAI } from "openai";
 import { promises as fs } from "fs";
-import * as path from "path";
 import { parseForm } from "@/lib/parse-form";
 import { Language } from "@/contexts/language-context";
 import { translations } from "@/lib/translations";
@@ -25,11 +24,10 @@ const ALLOWED_MIME_TYPES = [
 export async function POST(req: NextRequest) {
   try {
     // Check for CSRF protection
-    const referer = req.headers.get("referer");
     const origin = req.headers.get("origin");
     const host = req.headers.get("host");
 
-    // If referer/origin doesn't match our host, reject the request
+    // If origin doesn't match our host, reject the request
     if (origin && host && !origin.includes(host)) {
       return NextResponse.json({ error: "CSRF check failed" }, { status: 403 });
     }

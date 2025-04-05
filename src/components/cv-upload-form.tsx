@@ -48,22 +48,21 @@ export function CVUploadForm({ onRoastComplete }: CVUploadFormProps) {
     defaultValues: {},
   });
 
-  const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
-    useDropzone({
-      accept: {
-        "application/pdf": [".pdf"],
-        "application/msword": [".doc"],
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-          [".docx"],
-        "text/plain": [".txt"],
-      },
-      maxFiles: 1,
-      onDrop: (acceptedFiles) => {
-        if (acceptedFiles?.[0]) {
-          form.setValue("file", acceptedFiles[0], { shouldValidate: true });
-        }
-      },
-    });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    accept: {
+      "application/pdf": [".pdf"],
+      "application/msword": [".doc"],
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+        [".docx"],
+      "text/plain": [".txt"],
+    },
+    maxFiles: 1,
+    onDrop: (acceptedFiles) => {
+      if (acceptedFiles?.[0]) {
+        form.setValue("file", acceptedFiles[0], { shouldValidate: true });
+      }
+    },
+  });
 
   const selectedFile = form.watch("file");
 
@@ -116,7 +115,7 @@ export function CVUploadForm({ onRoastComplete }: CVUploadFormProps) {
             <FormField
               control={form.control}
               name="file"
-              render={({ field }) => (
+              render={() => (
                 <FormItem>
                   <FormControl>
                     <div

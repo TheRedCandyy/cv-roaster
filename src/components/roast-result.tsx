@@ -44,7 +44,7 @@ export function RoastResult({ roast, onReset }: RoastResultProps) {
     try {
       await navigator.clipboard.writeText(fullRoast);
       toast.success(t.copySuccess);
-    } catch (error) {
+    } catch {
       toast.error(t.copyError);
     }
   };
@@ -57,8 +57,8 @@ export function RoastResult({ roast, onReset }: RoastResultProps) {
           text: fullRoast,
         });
         toast.success(t.shareSuccess);
-      } catch (error) {
-        console.error("Error sharing:", error);
+      } catch {
+        console.error("Error sharing");
       }
     } else {
       copyToClipboard();

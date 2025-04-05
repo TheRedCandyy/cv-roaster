@@ -3,7 +3,14 @@ import formidable from "formidable";
 import { promises as fs } from "fs";
 import * as path from "path";
 import * as os from "os";
-import { Writable } from "stream";
+
+// Define a type for the file object
+interface FileObject {
+  filepath: string;
+  originalFilename: string;
+  mimetype: string;
+  size: number;
+}
 
 export const parseForm = async (
   req: NextRequest
@@ -15,6 +22,8 @@ export const parseForm = async (
       // Ensure the temporary directory exists
       await fs.mkdir(tempDir, { recursive: true });
 
+      // We're not using formidable's parse anymore, just keeping the configuration for reference
+      /* 
       const form = formidable({
         maxFiles: 1,
         maxFileSize: 10 * 1024 * 1024, // 10MB
@@ -32,6 +41,7 @@ export const parseForm = async (
           );
         },
       });
+      */
 
       // Clone the request to create a new readable stream
       const clone = req.clone();
@@ -54,7 +64,7 @@ export const parseForm = async (
       await fs.writeFile(tempFilePath, buffer);
 
       // Create a response object with the expected structure
-      const fileObject = {
+      const fileObject: FileObject = {
         filepath: tempFilePath,
         originalFilename: file.name,
         mimetype: file.type,
@@ -66,7 +76,7 @@ export const parseForm = async (
 
       resolve({
         fields: { language: language ? [language.toString()] : [] },
-        files: { cv: [fileObject] as any },
+        files: { cv: [fileObject as formidable.File] },
       });
     } catch (error) {
       reject(error);
