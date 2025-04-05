@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CV Roaster
 
-## Getting Started
+Uma aplicação Next.js para "roastar" CVs de forma impiedosa e humorística usando IA.
 
-First, run the development server:
+## Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- ✅ Upload de CV em múltiplos formatos (PDF, DOCX, DOC, TXT)
+- ✅ Processamento com OpenAI GPT-4
+- ✅ Interface de utilizador moderna e intuitiva com shadcn/ui
+- ✅ Roast impiedoso em português de Portugal
+- ✅ Partilha fácil dos resultados
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tecnologias utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js 15
+- React 19
+- OpenAI API
+- shadcn/ui
+- TailwindCSS
+- TypeScript
+- React Hook Form + Zod
+- React Dropzone
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuração
 
-## Learn More
+### Pré-requisitos
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js 18.17.0 ou superior
+- Chave API da OpenAI
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Passos para instalação
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone o repositório:
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/teu-usuario/cv-roaster.git
+   cd cv-roaster
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Instale as dependências:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm install
+   ```
+
+3. Configure as variáveis de ambiente:
+
+   - Crie um ficheiro `.env.local` na raiz do projeto
+   - Adicione a chave API da OpenAI:
+     ```
+     OPENAI_API_KEY=your_openai_api_key_here
+     ```
+
+4. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver a aplicação.
+
+## Como utilizar
+
+1. Carregue o seu CV utilizando o formulário (aceita formatos PDF, DOCX, DOC e TXT)
+2. Clique no botão "Destrói o meu ego"
+3. Aguarde enquanto a IA processa e gera um roast impiedoso do seu CV
+4. Leia o resultado e partilhe-o se desejar
+
+## Aviso
+
+Esta aplicação foi concebida apenas para fins humorísticos. Os roasts são gerados por IA e podem ser bastante impiedosos. Use por sua conta e risco e não leve demasiado a sério!
