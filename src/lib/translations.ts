@@ -45,6 +45,7 @@ export interface TranslationObject {
 
   // Footer
   footerText: string;
+  privacyNotice: string;
   githubButton: string;
   coffeeButton: string;
 
@@ -105,6 +106,8 @@ export const translations: Record<Language, TranslationObject> = {
 
     // Footer
     footerText: "Created to destroy egos and CVs since 2024",
+    privacyNotice:
+      "We do not store any uploaded CV files. Your data is processed and immediately deleted.",
     githubButton: "GitHub",
     coffeeButton: "Buy Me a Coffee",
 
@@ -173,6 +176,8 @@ export const translations: Record<Language, TranslationObject> = {
 
     // Footer
     footerText: "Criado para destruir egos e CVs desde 2024",
+    privacyNotice:
+      "Não armazenamos nenhum ficheiro CV carregado. Os teus dados são processados e imediatamente eliminados.",
     githubButton: "GitHub",
     coffeeButton: "Oferecer um Café",
 
@@ -240,6 +245,8 @@ export const translations: Record<Language, TranslationObject> = {
 
     // Footer
     footerText: "Creado para destruir egos y CVs desde 2024",
+    privacyNotice:
+      "No almacenamos ningún archivo CV subido. Tus datos son procesados y eliminados inmediatamente.",
     githubButton: "GitHub",
     coffeeButton: "Invítame a un Café",
 
@@ -308,6 +315,8 @@ export const translations: Record<Language, TranslationObject> = {
 
     // Footer
     footerText: "Créé pour détruire les egos et les CVs depuis 2024",
+    privacyNotice:
+      "Nous ne stockons aucun fichier CV téléchargé. Vos données sont traitées et immédiatement supprimées.",
     githubButton: "GitHub",
     coffeeButton: "Offrez-moi un Café",
 
@@ -377,6 +386,8 @@ export const translations: Record<Language, TranslationObject> = {
 
     // Footer
     footerText: "Erstellt, um Egos und Lebensläufe seit 2024 zu zerstören",
+    privacyNotice:
+      "Wir speichern keine hochgeladenen Lebenslauf-Dateien. Ihre Daten werden verarbeitet und sofort gelöscht.",
     githubButton: "GitHub",
     coffeeButton: "Spendieren Sie mir einen Kaffee",
 

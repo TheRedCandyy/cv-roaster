@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Toaster } from "sonner";
 import { CVUploadForm } from "@/components/cv-upload-form";
 import { RoastResult } from "@/components/roast-result";
-import { Flame, Github, Coffee } from "lucide-react";
+import { Flame, Github, Coffee, ShieldCheck } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslations } from "@/lib/translations";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -65,31 +65,37 @@ export default function Home() {
 
         <footer className="py-6 mt-10 w-full">
           <div className="container">
-            <div className="flex items-center justify-center gap-4">
-              <Button variant="secondary" size="sm" className="gap-2" asChild>
-                <a
-                  href="https://github.com/TheRedCandyy/cv-roaster"
-                  target="_blank"
-                  rel="noopener noreferrer"
+            <div className="flex flex-col items-center gap-4">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground text-center">
+                <ShieldCheck className="h-4 w-4 text-green-500" />
+                <p>{t.privacyNotice}</p>
+              </div>
+              <div className="flex items-center justify-center gap-4">
+                <Button variant="secondary" size="sm" className="gap-2" asChild>
+                  <a
+                    href="https://github.com/alextavares/cv-roaster"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="h-4 w-4" />
+                    {t.githubButton}
+                  </a>
+                </Button>
+                <Button
+                  size="sm"
+                  className="gap-2 bg-yellow-500 hover:bg-yellow-600 text-black"
+                  asChild
                 >
-                  <Github className="h-4 w-4" />
-                  {t.githubButton}
-                </a>
-              </Button>
-              <Button
-                size="sm"
-                className="gap-2 bg-yellow-500 hover:bg-yellow-600 text-black"
-                asChild
-              >
-                <a
-                  href="https://buymeacoffee.com/alextavares"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Coffee className="h-4 w-4" />
-                  {t.coffeeButton}
-                </a>
-              </Button>
+                  <a
+                    href="https://buymeacoffee.com/alextavares"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Coffee className="h-4 w-4" />
+                    {t.coffeeButton}
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </footer>
