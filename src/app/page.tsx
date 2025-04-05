@@ -40,10 +40,6 @@ export default function Home() {
 
         <main className="flex-1 container py-10 px-4 md:px-6 flex flex-col items-center">
           <div className="w-full max-w-3xl relative">
-            <div className="absolute top-6 right-6 z-10">
-              <LanguageSwitcher />
-            </div>
-
             {!roastResult ? (
               <>
                 <div className="text-center space-y-2 mb-8">
@@ -57,7 +53,12 @@ export default function Home() {
                 <CVUploadForm onRoastComplete={handleRoastComplete} />
               </>
             ) : (
-              <RoastResult roast={roastResult} onReset={handleReset} />
+              <>
+                <div className="absolute top-6 right-6 z-10">
+                  <LanguageSwitcher />
+                </div>
+                <RoastResult roast={roastResult} onReset={handleReset} />
+              </>
             )}
           </div>
         </main>
