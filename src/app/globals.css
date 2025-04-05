@@ -120,3 +120,62 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Typing Animation Styling */
+.typing-animation {
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.typing-animation .type-cursor {
+  color: #f59e0b; /* Yellow color to match our theme */
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Support message styling */
+.alert .text-sm {
+  white-space: normal;
+  line-height: 1.5;
+}
+
+.alert .inline {
+  display: inline;
+}
+
+/* Make sure Alert component properly displays text */
+[data-slot="alert-description"] {
+  white-space: normal;
+}
+
+/* Ensure title and description remain visible */
+[data-slot="alert-title"] {
+  display: block !important;
+  white-space: normal !important;
+}
+
+/* Format the support message as a proper paragraph */
+.support-message {
+  display: block;
+  width: 100%;
+}
+
+/* Roast content formatting */
+.roast-content p {
+  margin-bottom: 1rem;
+}
+
+.roast-content p:last-child {
+  margin-bottom: 0;
+}

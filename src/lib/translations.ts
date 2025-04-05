@@ -24,6 +24,7 @@ export interface TranslationObject {
   copyError: string;
   shareSuccess: string;
   shareNotAvailable: string;
+  reachedRateLimit: string;
 
   // Results
   resultTitle: string;
@@ -32,6 +33,9 @@ export interface TranslationObject {
   shareButton: string;
   resetButton: string;
   supportButton: string;
+  skipButton: string;
+  slowerTyping: string;
+  fasterTyping: string;
 
   // Support messages
   supportTitle: string;
@@ -76,6 +80,8 @@ export const translations: Record<Language, TranslationObject> = {
     shareSuccess: "Roast shared successfully!",
     shareNotAvailable:
       "Share function not available, but we copied the text to your clipboard!",
+    reachedRateLimit:
+      "Daily limit reached. You can upload 5 CVs per day. Please try again tomorrow.",
 
     // Results
     resultTitle: "Your CV Has Been Completely Destroyed",
@@ -85,6 +91,9 @@ export const translations: Record<Language, TranslationObject> = {
     shareButton: "Share",
     resetButton: "Roast another CV",
     supportButton: "Support",
+    skipButton: "Skip",
+    slowerTyping: "Slower",
+    fasterTyping: "Faster",
 
     // Support messages
     supportTitle: "Support the AI costs!",
@@ -139,6 +148,8 @@ export const translations: Record<Language, TranslationObject> = {
     shareSuccess: "Roast partilhado com sucesso!",
     shareNotAvailable:
       "Função de partilha não disponível, mas copiámos o texto para a área de transferência!",
+    reachedRateLimit:
+      "Limite diário atingido. Podes carregar 5 CVs por dia. Por favor, tenta novamente amanhã.",
 
     // Results
     resultTitle: "O Teu CV Foi Completamente Destruído",
@@ -148,6 +159,9 @@ export const translations: Record<Language, TranslationObject> = {
     shareButton: "Partilhar",
     resetButton: "Roastar outro CV",
     supportButton: "Apoiar",
+    skipButton: "Saltar",
+    slowerTyping: "Mais lento",
+    fasterTyping: "Mais rápido",
 
     // Support messages
     supportTitle: "Ajuda com os custos da IA!",
@@ -195,12 +209,14 @@ export const translations: Record<Language, TranslationObject> = {
     fileRequired: "Por favor, sube un CV",
 
     // Errors & notifications
-    errorProcessing: "Ocurrió un error al procesar el CV",
+    errorProcessing: "Se produjo un error al procesar el CV",
     copySuccess: "¡Roast copiado al portapapeles!",
     copyError: "No se pudo copiar el texto",
     shareSuccess: "¡Roast compartido con éxito!",
     shareNotAvailable:
       "Función de compartir no disponible, ¡pero copiamos el texto a tu portapapeles!",
+    reachedRateLimit:
+      "Límite diario alcanzado. Puedes subir 5 CVs por día. Por favor, inténtalo de nuevo mañana.",
 
     // Results
     resultTitle: "Tu CV Ha Sido Completamente Destruido",
@@ -210,6 +226,9 @@ export const translations: Record<Language, TranslationObject> = {
     shareButton: "Compartir",
     resetButton: "Asar otro CV",
     supportButton: "Apoyar",
+    skipButton: "Saltar",
+    slowerTyping: "Más lento",
+    fasterTyping: "Más rápido",
 
     // Support messages
     supportTitle: "¡Ayuda con los costes de la IA!",
@@ -263,7 +282,9 @@ export const translations: Record<Language, TranslationObject> = {
     copyError: "Impossible de copier le texte",
     shareSuccess: "Roast partagé avec succès !",
     shareNotAvailable:
-      "Fonction de partage non disponible, mais nous avons copié le texte dans ton presse-papiers !",
+      "Fonction de partage non disponible, mais nous avons copié le texte dans votre presse-papiers !",
+    reachedRateLimit:
+      "Limite quotidienne atteinte. Vous pouvez télécharger 5 CV par jour. Veuillez réessayer demain.",
 
     // Results
     resultTitle: "Ton CV A Été Complètement Détruit",
@@ -273,6 +294,9 @@ export const translations: Record<Language, TranslationObject> = {
     shareButton: "Partager",
     resetButton: "Rôtir un autre CV",
     supportButton: "Soutenir",
+    skipButton: "Passer",
+    slowerTyping: "Plus lent",
+    fasterTyping: "Plus rapide",
 
     // Support messages
     supportTitle: "Soutenez les coûts de l'IA !",
@@ -328,6 +352,8 @@ export const translations: Record<Language, TranslationObject> = {
     shareSuccess: "Roast erfolgreich geteilt!",
     shareNotAvailable:
       "Teilen-Funktion nicht verfügbar, aber wir haben den Text in deine Zwischenablage kopiert!",
+    reachedRateLimit:
+      "Tageslimit erreicht. Du kannst 5 Lebensläufe pro Tag hochladen. Bitte versuche es morgen erneut.",
 
     // Results
     resultTitle: "Dein Lebenslauf Wurde Komplett Zerstört",
@@ -337,6 +363,9 @@ export const translations: Record<Language, TranslationObject> = {
     shareButton: "Teilen",
     resetButton: "Zurücksetzen",
     supportButton: "Unterstützen",
+    skipButton: "Überspringen",
+    slowerTyping: "Langsamer",
+    fasterTyping: "Schneller",
 
     // Support messages
     supportTitle: "Unterstützen Sie die KI-Kosten!",

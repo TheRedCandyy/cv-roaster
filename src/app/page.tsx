@@ -40,7 +40,7 @@ export default function Home() {
 
         <main className="flex-1 container py-10 px-4 md:px-6 flex flex-col items-center">
           <div className="w-full max-w-3xl relative">
-            <div className="absolute top-0 right-0 z-10">
+            <div className="absolute top-6 right-6 z-10">
               <LanguageSwitcher />
             </div>
 
@@ -67,7 +67,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-4">
               <Button variant="secondary" size="sm" className="gap-2" asChild>
                 <a
-                  href="https://github.com/yourusername/cv-roaster"
+                  href="https://github.com/TheRedCandyy/cv-roaster"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -81,7 +81,7 @@ export default function Home() {
                 asChild
               >
                 <a
-                  href="https://www.buymeacoffee.com/yourusername"
+                  href="https://buymeacoffee.com/alextavares"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

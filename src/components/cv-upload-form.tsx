@@ -81,6 +81,12 @@ export function CVUploadForm({ onRoastComplete }: CVUploadFormProps) {
 
       if (!response.ok) {
         const errorData = await response.json();
+
+        // Check if this is a rate limit error (status 429)
+        if (response.status === 429) {
+          throw new Error(t.reachedRateLimit);
+        }
+
         throw new Error(errorData.error || t.errorProcessing);
       }
 
@@ -151,9 +157,11 @@ export function CVUploadForm({ onRoastComplete }: CVUploadFormProps) {
             {selectedFile && (
               <Alert className="mt-4 bg-yellow-500/10 border-yellow-500/50">
                 <Coffee className="h-4 w-4 text-yellow-500" />
-                <AlertDescription className="text-sm">
-                  <span className="font-medium">{t.supportTitle}</span>{" "}
-                  {t.supportDescription}
+                <AlertDescription className="text-sm support-message">
+                  <div className="inline-block w-full">
+                    <span className="font-medium">{t.supportTitle}</span>{" "}
+                    <span className="inline-block">{t.supportDescription}</span>
+                  </div>
                 </AlertDescription>
               </Alert>
             )}
